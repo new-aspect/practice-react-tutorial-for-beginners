@@ -46,3 +46,8 @@ btn.addEventListener('click',()=>{
 实际上，React是这样的组件树，应用程序是根，将这些组合在一起。
 
 好了，让我们下一步设置环境，开发一个React的应用
+
+### 环境设置
+* node 16以上
+* 使用VS Code开发
+* 使用VS Code开发，强烈建议使用`Prettier`扩展来格式化代码, 然后在VS Code里面的`Perference`->`settings`->搜索`format on save`然后打上对钩，这样你每次保存都会自动格式化
