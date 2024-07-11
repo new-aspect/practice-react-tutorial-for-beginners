@@ -1,0 +1,63 @@
+# Node.js dependencies
+/node_modules
+
+# Local environment variables
+/.env
+/.env.local
+/.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+
+# Build output
+/dist
+/out
+/build
+
+# Optional npm cache directory
+.npm
+
+# Parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist/
+
+# VuePress
+.vuepress/dist
+
+# Temporary folders and files
+temp/
+tmp/
+*.tmp
+*.swp
+
+# macOS specific
+.DS_Store
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Generated files
+*.log
+*.lock
+*.bak
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# WebStorm files
+.idea/

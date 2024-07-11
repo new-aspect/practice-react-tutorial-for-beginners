@@ -51,3 +51,49 @@ btn.addEventListener('click',()=>{
 * node 16以上
 * 使用VS Code开发
 * 使用VS Code开发，强烈建议使用`Prettier`扩展来格式化代码, 然后在VS Code里面的`Perference`->`settings`->搜索`format on save`然后打上对钩，这样你每次保存都会自动格式化
+
+
+## 创建React App
+有两种方式创建React App 一个是Create React APP(CRA) 一个是vite
+```
+npm create vite@latest
+```
+我们使用vite构建，名称是react-app, 类型是React App 然后选择是 TypeScript
+
+然后执行
+```
+npm run dev
+```
+
+补充，检查npm源
+```
+npm config get registry
+
+# 如果输出不是 https://registry.npmjs.org/ 或其他你信任的源，则可能是源的问题。
+
+# 官方源
+npm config set registry https://registry.npmjs.org/
+
+# 淘宝源
+npm config set registry https://registry.npmmirror.com/
+```
+
+补充，一下命令可以打开vs code
+```
+code .
+```
+
+### 项目结构
+node_modules 里面是我们所有的第三方库的地方，你永远不必碰他
+
+public文件夹会有我们的图像、视频等静态文件
+
+src文件夹里面会有我们开发的代码
+
+package.json里面
+
+* dependencies 是我们部署时的依赖，我们看到我们只有react和react-dom这两个依赖
+
+* devDependencies 是我们开发时的依赖，
+
+tsconfig.json里面说了如何将TypeScirpt编译成为JavaScript
