@@ -97,3 +97,26 @@ package.json里面
 * devDependencies 是我们开发时的依赖，
 
 tsconfig.json里面说了如何将TypeScirpt编译成为JavaScript
+
+### 创建React Component
+首先在src目录下面建立Message.tsx, TypeScript的后缀是ts或tsx。我们通常用ts表示普通的TypeScript文件，用tsx表示React Component
+
+有两种方式创建React Component ，我们可以使用JavaScript类或函数，最近函数变得很流行，所以我们使用函数创建React Component， 如果你维护老的React项目，可以翻看之前的视频看如何用JavaScript类创建React Component
+
+
+```JavaScript
+// 函数命名是PascalCasing 的命名方式
+function Message() {
+    // 这个返回是JSX，也就是JavaScript里面写XML, 它最终
+    // 会编译成为HTML
+    // 我们可以访问babeljs.io里面看到这段代码如何转换为JavaScript
+    return <h1>Hello World</h1>
+}
+
+// 这是非常基础的组件，为了使用它，我们需要export
+export default Message;
+```
+
+![alt text](image-3.png)
+
+为了使用，我们删除App.tsx的文件
