@@ -120,3 +120,62 @@ export default Message;
 ![alt text](image-3.png)
 
 为了使用，我们删除App.tsx的文件
+```React
+// 函数命名是PascalCasing 的命名方式
+function Message() {
+    // 这个返回是JSX，也就是JavaScript里面写XML, 它最终
+    // 会编译成为HTML
+    // 我们可以访问babeljs.io里面看到这段代码如何转换为JavaScript
+    
+    const name = "Ning"
+    if (name)
+        return <h1>Hello {name}</h1>
+    return <h1>Hello World</h1>
+}
+
+// 这是非常基础的组件，为了使用它，我们需要export
+export default Message;
+```
+
+### React生态
+* React 构建UI
+* 构建路由
+* 构建HTTP请求
+* 管理应用状态
+* 国际化
+* 表单验证
+* 动画
+这些内容React允许你选择适合你的工具
+
+### BootStrap
+BootStrap是流行的CSS库
+```
+npm i bootstrap
+```
+
+我们现在有App.css文件和index.css文件，我们清空App.css和index.css文件,
+然后在main.tsx里面添加
+```
+import 'bootstrap/dist/css/bootstrap.css'
+```
+这个时候我们看到页面字体在左上角，并且有漂亮的字体格式，说明我们安装成功
+
+然后我们在src路径下面新建 components 文件夹，在这个文件夹新建ListGroup.tsx
+
+然后我们想向BootStrap借一些代码 https://getbootstrap.com/docs/5.3/components/list-group/
+
+在mac里面使用快捷键command + D 可以将class修改为 className
+
+```
+function ListGroup() {
+    return <ul className="list-group">
+    <li className="list-group-item">An item</li>
+    <li className="list-group-item">A second item</li>
+    <li className="list-group-item">A third item</li>
+    <li className="list-group-item">A fourth item</li>
+    <li className="list-group-item">And a fifth one</li>
+  </ul>
+}
+
+export default ListGroup
+```
