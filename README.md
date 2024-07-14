@@ -221,3 +221,93 @@ export default ListGroup;
 ```
 
 注意到它这里格式化的很漂亮
+
+### React语法报错
+```
+function ListGroup() {
+  return (
+    //<h1></h1>// 这样写会报错，因为React只能允许一个Component返回一个元素，
+    // 我们也可以理解为这一句话转换为React就是 React.createElement('h1')
+    <ul className="list-group">
+      <li className="list-group-item">An item</li>
+      <li className="list-group-item">A second item</li>
+      <li className="list-group-item">A third item</li>
+      <li className="list-group-item">A fourth item</li>
+      <li className="list-group-item">And a fifth one</li>
+    </ul>
+  );
+}
+```
+
+解决办法是我们用一个大的div或空的tag包裹
+```
+function ListGroup() {
+  return (
+    <div> //我们可以使用div包裹解决这个问题
+      <h1>List</h1>// 这样写会报错，因为React只能允许一个Component返回一个元素，
+      // 我们也可以理解为这一句话转换为React就是 React.createElement('h1')
+      <ul className="list-group">
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">A second item</li>
+        <li className="list-group-item">A third item</li>
+        <li className="list-group-item">A fourth item</li>
+        <li className="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+  );
+}
+
+export default ListGroup;
+
+```
+
+但这会带来额外的div或dom, 我们不希望带来额外的div或dom, 我们可以用
+点击两次Commend+D选择Div标签，然后可以一起换成Fragment, 这时候
+不会出现额外的div或Dom
+
+```
+import { Fragment } from "react/jsx-runtime";
+
+function ListGroup() {
+  return (
+    <Fragment> //我们可以使用div包裹解决这个问题
+      <h1>List</h1>// 这样写会报错，因为React只能允许一个Component返回一个元素，
+      // 我们也可以理解为这一句话转换为React就是 React.createElement('h1')
+      <ul className="list-group">
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">A second item</li>
+        <li className="list-group-item">A third item</li>
+        <li className="list-group-item">A fourth item</li>
+        <li className="list-group-item">And a fifth one</li>
+      </ul>
+    </Fragment>
+  );
+}
+
+export default ListGroup;
+```
+
+我们想要动态的列出来这里面的数据，这里面我们用了item.map去遍历，
+我们用了箭头函数 (item)=>()告诉每一行应该怎么渲染，还有里面的{}表示以JavaScript的方式选人
+```
+import { Fragment } from "react/jsx-runtime";
+
+function ListGroup() {
+  const items = ["北京", "上海", "广州", "深圳"];
+
+  return (
+    <Fragment>
+      <h1>List</h1>
+      <ul className="list-group">
+        {/* 我们想让items转换为HTML的<li>北京</li>这样的HMLT一行，因为React返回的JSX只支持HTML */}
+        {items.map((item) => (
+          <li className="list-group-item">{item}</li>
+        ))}
+      </ul>
+    </Fragment>
+  );
+}
+
+export default ListGroup;
+
+```
