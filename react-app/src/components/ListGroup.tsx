@@ -1,7 +1,13 @@
 import { Fragment } from "react/jsx-runtime";
 
 function ListGroup() {
-  const items = ["北京", "上海", "广州", "深圳"];
+  let items = ["北京", "上海", "广州", "深圳"];
+  // items = [];
+
+  // 我们有时候希望根据不同的item返回不同的数据，比如当item为空，我们返回没有item
+  if (items.length === 0) {
+    return <p>列表数据为空</p>
+  }
 
   return (
     <Fragment>
