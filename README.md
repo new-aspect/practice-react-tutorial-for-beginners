@@ -287,6 +287,9 @@ function ListGroup() {
 export default ListGroup;
 ```
 
+在JSX里面，我们没有For循环，我们没办法写 for ... ,所以我们需要用另一种方法
+在JavaScript中叫做map的方法
+
 我们想要动态的列出来这里面的数据，这里面我们用了item.map去遍历，
 我们用了箭头函数 (item)=>()告诉每一行应该怎么渲染，还有里面的{}表示以JavaScript的方式选人
 ```
@@ -310,4 +313,16 @@ function ListGroup() {
 
 export default ListGroup;
 
+```
+
+然后我们在浏览器打开console，发现有一个警告
+```
+Warning: Each child in a list should have a unique "key" prop.
+```
+这是因为React希望通过唯一的key知道更新的时候应该更新那一部分，这里面我面先用item的值取代
+```
+{/* 我们想让items转换为HTML的<li>北京</li>这样的HMLT一行，因为React返回的JSX只支持HTML */}
+{items.map((item) => (
+  <li key={item} className="list-group-item">{item}</li>
+))}
 ```
